@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Class Postage Calculator</title>
+    <script>
+        function isPostcard() {
+            var mailType = document.getElementById("mailType").value;
+            if (type == "Postcard") {
+                document.getElementById("weight").disabled = true;
+                document.getElementById("weight").value = "0.22";
+            }
+            else {
+                document.getElementById("weight").disabled = false;
+                document.getElementById("weight").value = ""; 
+            }
+        }
+    </script>    
+</head>
+    <h1>First Class Postage Calculator</h1>
+    <form action="/postage" method="get">
+    <fieldset>
+    <legend>Choose postage type and input weight</legend>
+        <label for="mailType">Mail Type:</label>
+        <select name="mailType" id="mailType" onchange="isPostcard();">
+            <option>Stamped Letter</option>
+            <option>Metered Letter</option>
+            <option>Large Envelope (Flats)</option>
+            <option>Parcel</option>
+            <option>Postcard</option>
+        </select> <br />
+        <label for="weight">Weight: </label>
+        <input type="text" id="weight" name="weight" placeholder="In oz"> <br />
+        <input type="submit" value="Calculate Postage">
+    </fieldset>      
+</form>
+
+</html>
